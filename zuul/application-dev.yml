@@ -18,8 +18,8 @@ management:
 zuul:
   routes:
     api-a:
-      path: /api-b/**
+      path: /api-a/**
       serviceId: service-ribbon
     api-b:
-      path: /api-a/**
+      path: /api-b/**
       serviceId: service-feign
