@@ -1,12 +1,23 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8769
+  
 spring:
   application:
     name: service-zuul
+  bus:
+    trace:
+      enabled: true
+  stream:
+    kafka:
+      binder:
+        brokers: localhost:2181
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+        
 zuul:
   routes:
     api-a:
